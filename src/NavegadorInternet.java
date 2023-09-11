@@ -1,2 +1,6 @@
-package PACKAGE_NAME;public class NavegadorInternet {
+import java.util.ArrayList;
+import java.util.List;
+
+public class NavegadorInternet {
+
 }
