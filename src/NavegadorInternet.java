@@ -27,6 +27,14 @@ public class NavegadorInternet {
         }
     }
 
+    public void exibirAbaAtual() {
+        if (abaAtual >= 0) {
+            System.out.println("Aba atual: " + abaNavegador.get(abaAtual));
+        } else {
+            System.out.println("Nenhuma aba aberta.");
+        }
+    }
+
     public void executarMenuSafari() {
         boolean continuar = true;
         Scanner scanner = new Scanner(System.in);
@@ -35,9 +43,10 @@ public class NavegadorInternet {
             System.out.println("\nO que você deseja fazer no Safari?");
             System.out.println("1. Adicionar aba");
             System.out.println("2. Fechar aba");
-            System.out.println("3. Sair do Safari");
+            System.out.println("3. Exibir aba atual");
+            System.out.println("4. Sair do Safari");
 
-            System.out.print("Escolha uma opção (1/2/3): ");
+            System.out.print("Escolha uma opção (1/2/3/4): ");
             int escolha = scanner.nextInt();
 
             switch (escolha) {
@@ -48,11 +57,14 @@ public class NavegadorInternet {
                     fecharAba();
                     break;
                 case 3:
+                    exibirAbaAtual();
+                    break;
+                case 4:
                     System.out.println("Saindo do Safari...");
                     continuar = false;
                     break;
                 default:
-                    System.out.println("Opção inválida. Por favor, escolha uma opção válida (1/2/3).");
+                    System.out.println("Opção inválida. Por favor, escolha uma opção válida (1/2/3/4).");
             }
         }
     }
